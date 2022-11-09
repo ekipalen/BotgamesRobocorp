@@ -17,6 +17,7 @@ ${submitCounter}     1
 ...     Checking (..2839)=//nav[@id='sidenavAccordion']/div[1]/div[1]/a[1]
 ...     Credit Card (..4513)=//nav[@id='sidenavAccordion']/div[1]/div[1]/a[4]
 ...     Savings (..3842)=//nav[@id='sidenavAccordion']/div[1]/div[1]/a[3]
+${captha_accepted}   No
 
 *** Keywords ***
 Open Browser tabs and count Transactions
@@ -32,7 +33,10 @@ Open Browser tabs and count Transactions
 Login to Rusty
     Input Text When Element Is Visible    ${ipt_user}    ${rusty_user}
     Input Text When Element Is Visible    ${ipt_pwd}    ${rusty_pwd}
-    Click Element If Visible    //*[@id="onetrust-accept-btn-handler"]
+    IF    '${captha_accepted}' == 'No'
+            Click Element When Visible    //*[@id="onetrust-accept-btn-handler"]
+            ${captha_accepted}   Set Variable   ${captha_accepted}    Yes
+    END
     Click Element When Visible    ${btn_login2}
 
 Loop and Look for transactions
