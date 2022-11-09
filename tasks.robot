@@ -35,7 +35,8 @@ Login to Rusty
     Input Text When Element Is Visible    ${ipt_pwd}    ${rusty_pwd}
     IF    '${captha_accepted}' == 'No'
             Click Element When Visible    //*[@id="onetrust-accept-btn-handler"]
-            ${captha_accepted}   Set Variable   ${captha_accepted}    Yes
+            ${captha_accepted}   Set Variable     Yes
+            Set Global Variable    ${captha_accepted}
     END
     Click Element When Visible    ${btn_login2}
 
