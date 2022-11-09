@@ -1,11 +1,15 @@
-# Template: Standard Robot Framework
+# Botgames example bot 
 
-This is the simplest template to start from.
+This bot solves Automation Anywhere Botgames Financial Transaction Validation challenge. 
 
-- Get started from a simple task template in `tasks.robot`.
-  - Uses [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) syntax.
-- You can configure your robot `robot.yaml`.
-- You can configure dependencies in `conda.yaml`.
+https://developer.automationanywhere.com/challenges/financialvalidation-challenge.html
+
+More in detail, this bot will:
+- start the challenge by opening the challenge page
+- login into Rusty Bank application
+- pick payment amount and account from each transaction one by one
+- search for the Supplier name from Rusty Bank's correct account with the amount value
+- handle possible errors on Rusty Bank by loggin in again
 
 ## Learning materials
 
