@@ -45,6 +45,7 @@ Loop and Look for transactions
     FOR    ${counter}    IN RANGE    1    20   
         TRY
             Switch Window    ${handles}[0]
+            Wait Until Element Is Visible    //input[@id='PaymentAmount${submitCounter}']
             ${PaymentAmount}=   Get Value    //input[@id='PaymentAmount${submitCounter}']
             ${PaymentAccount}=   Get Value    //input[@id='PaymentAccount${submitCounter}']
             Switch Window    ${handles}[1]
